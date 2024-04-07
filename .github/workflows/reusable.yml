@@ -31,5 +31,6 @@ jobs:
       - name: Print secrets
         run: echo ${{ secrets.my-secrets }}
       - name: Set deploy job output to result
-        run: echo "step-result='deploy is success'" >> $GITHUB_OUTPUT
+        id: set-result
+        run: echo "step-result=success" >> $GITHUB_OUTPUT
         # run: find dist/assets/*.js -type f -execdir echo 'script-js-file-name={}' >> $GITHUB_OUTPUT ';'
