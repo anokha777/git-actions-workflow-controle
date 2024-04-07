@@ -71,6 +71,8 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       artifact-name: dist-files
+    secrets: 
+      my-secrets: ${{ secrets.GITHUB_TOKEN }}
   reports:
     needs: [lint, deploy]
     if: failure()

@@ -7,6 +7,9 @@ on:
         required: false
         default: dist-files
         type: string
+    secrets:
+      my-secrets:
+        required: true
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,3 +22,5 @@ jobs:
         run: ls
       - name: Output Information
         run: echo "App is deployed..."
+      - name: Print secrets
+        run: echo ${{ secrets.my-secrets }}
